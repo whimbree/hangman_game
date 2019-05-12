@@ -1,5 +1,4 @@
 defmodule TextClient.Summary do
-
   alias TextClient.State
 
   def display(game = %State{tally: tally}) do
@@ -9,7 +8,7 @@ defmodule TextClient.Summary do
       "Guesses left: #{tally.turns_left}\n",
       "Guesses made: #{Enum.join(tally.used, " ")}\n"
     ])
+
     game
   end
-
 end

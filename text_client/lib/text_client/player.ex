@@ -1,5 +1,4 @@
 defmodule TextClient.Player do
-
   alias TextClient.{State, Summary, Prompter, Mover}
 
   def init(game = %State{}) do
@@ -44,5 +43,4 @@ defmodule TextClient.Player do
     IO.puts(msg)
     exit(:normal)
   end
-
 end
