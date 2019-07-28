@@ -7,8 +7,16 @@ defmodule Hangman.Server do
     GenServer.start_link(__MODULE__, nil)
   end
 
-  def init(_) do
+  def start_link(word) do
+    GenServer.start_link(__MODULE__, word)
+  end
+
+  def init(nil) do
     {:ok, Game.new_game()}
+  end
+
+  def init(word) do
+    {:ok, Game.new_game(word)}
   end
 
   def handle_call({:make_move, guess}, _from, game) do
